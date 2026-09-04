@@ -1,0 +1,52 @@
+{
+  "protocol_version": "2.0-smoke",
+  "experiment_name": "QuantumOpt-Explorer V2 smoke test",
+  "seeds": [1701, 1702],
+  "candidate_pool_size": 16,
+  "query_budget": 6,
+  "warmup_queries": 2,
+  "policies": ["catalog", "random", "greedy", "bads"],
+  "train_draws": 2,
+  "heldout_draws": 4,
+  "process_tomography": {
+    "enabled": false,
+    "heldout_draw_index": 0
+  },
+  "compensation_bounds": {
+    "bs_radians": 0.18,
+    "phase_radians": 0.30
+  },
+  "noise": {
+    "device_bs_sigma": 0.045,
+    "device_bs_clip": 0.12,
+    "train": {
+      "phase_sigma": 0.010,
+      "phase_common_sigma": 0.004,
+      "phase_bias": [0.0, 0.0],
+      "loss_mean": 0.020,
+      "loss_independent_sigma": 0.004,
+      "loss_common_sigma": 0.004,
+      "mode_loss_bias": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "loss_clip": [0.0, 0.06]
+    },
+    "heldout": {
+      "phase_sigma": 0.025,
+      "phase_common_sigma": 0.020,
+      "phase_bias": [0.018, -0.012],
+      "loss_mean": 0.055,
+      "loss_independent_sigma": 0.010,
+      "loss_common_sigma": 0.012,
+      "mode_loss_bias": [0.0, 0.004, 0.008, 0.012, 0.020, 0.025],
+      "loss_clip": [0.0, 0.15]
+    }
+  },
+  "gate": {
+    "policy": "bads",
+    "min_wins": 2,
+    "min_relative_improvement": 0.10,
+    "max_conditional_fidelity_decline": 0.01,
+    "process_tomography_role": "diagnostic_not_outcome_gate",
+    "min_process_fidelity": 0.90,
+    "stable_reversal_min_seeds": 2
+  }
+}

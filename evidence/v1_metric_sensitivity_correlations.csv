@@ -1,0 +1,5 @@
+split,metric,n_pattern_rows,n_selected_candidate_groups,aggregate_pearson_loss_vs_metric,within_candidate_pearson_mean,within_candidate_pearson_median,within_candidate_pearson_min,within_candidate_pearson_max,mean_loss_rate,mean_metric_value,evidence_status
+train,normalized_process_fidelity,576,36,0.08573777699581449,0.08212104964019168,0.07099110136316206,-0.5021726740435748,0.412850865171085,0.012055891308699745,0.8412823398831111,post-hoc diagnostic; correlation is not causal
+train,single_photon_survival,576,36,-0.6895772466738128,-0.9999950768767543,-0.9999951398593638,-0.9999980311367678,-0.9999921139703519,0.012055891308699745,0.9436411344098065,post-hoc diagnostic; correlation is not causal
+heldout,normalized_process_fidelity,864,36,0.04746368746334556,-0.028348896239754364,-0.0446282646051962,-0.31960001425309215,0.4671647136090859,0.035865217056075455,0.840873695771115,post-hoc diagnostic; correlation is not causal
+heldout,single_photon_survival,864,36,-0.6337363819338612,-0.9999162307926408,-0.9999227177302217,-0.9999783727989057,-0.9998187458882942,0.035865217056075455,0.8401284803230816,post-hoc diagnostic; correlation is not causal

@@ -1,48 +1,108 @@
 # QuantumOpt-Explorer
 
-**Preliminary-round attachment**  
-**Track:** AI for Research — Open Exploration  
-**Participant:** Haoming Chen  
-**Team:** Haoming's team
+An auditable open-exploration environment for query-efficient, out-of-distribution
+robust calibration of a fixed-topology heralded photonic CNOT.
 
-## Start here
+**Track:** GOAI Track 3, AI for Research - Open Exploration
 
-Open `QuantumOpt-Explorer_Problem_Definition.pdf`. This three-page problem-definition document is the primary submission material. It defines the research question, explains why an adaptive agent is appropriate, specifies the fixed and explorable parts of the Perceval environment, preregisters the discovery gate, establishes random and greedy baselines, and reports the completed preliminary experiment.
+**Participant:** Haoming Chen
 
-The current result is deliberately retained as a negative research signal. Under equal 48-query budgets across 12 paired seeds, Budget-Aware Diversity Search reached a mean held-out worst-quartile fidelity of 0.7971, compared with 0.8574 for random search and 0.8673 for greedy search. The preregistered discovery gate therefore did not pass. All episodes, including unfavourable runs, remain in the audit trail.
+**Semifinal release:** `semifinal-v2.0.0`
 
-## Package map
+**Repository:** https://github.com/Barca0412/QuantumOpt-Explorer
 
-| Path | Purpose |
-| --- | --- |
-| `QuantumOpt-Explorer_Problem_Definition.pdf` | Required problem-definition document; three pages |
-| `source/Problem_Definition_Source.md` | Editable source narrative |
-| `OPEN_SOURCE_PLAN.md` | Release scope, licensing and dependency disclosure |
-| `reproducibility/README.md` | Experiment boundary and one-command reproduction guide |
-| `reproducibility/config/experiment.json` | Frozen seeds, budgets, loss distributions and discovery gate |
-| `reproducibility/src/` | Environment, policies, metrics, statistics and QA code |
-| `reproducibility/tests/` | Deterministic unit and invariance tests |
-| `evidence/query_log.jsonl.gz` | All 1,728 completed oracle-query records, gzip-compressed |
-| `evidence/loss_schedules.csv.gz` | Exact training and held-out optical-loss draws, gzip-compressed |
-| `evidence/README.md` | Evidence unpacking and compact-package note |
-| `reproducibility/results/` | Episode summaries, paired comparisons, learning curves and Pareto archive |
-| `reproducibility/REPORT.md` | Executed experimental report |
-| `reproducibility/NEGATIVE_RESULTS.md` | Interpretation of the failed preregistered gate |
-| `SHA256SUMS.txt` | Package-level integrity manifest |
+## What this project claims
 
-## Reproduce the experiment
+The scientific question is deliberately narrow: under a fixed query budget, can a
+search policy select beam-splitter and phase compensations that retain useful CNOT
+behavior under stronger, asymmetric held-out device errors? The environment treats
+the Perceval catalog CNOT topology as fixed and exposes only six beam-splitter and
+two phase compensation parameters.
 
-The experiment requires `uv`, Python 3.12–3.14 and internet access for the first dependency installation.
+This is a simulation pilot and reusable benchmark. It is not a hardware result, a
+new-gate claim, or evidence of a globally novel optical topology. Positive,
+counterexample, crossover, and stable negative outcomes were all defined before the
+full run; the complete result is retained regardless of which outcome occurred.
+
+## Two-minute start
+
+Requirements: Python 3.12-3.14, `uv`, and internet access for the first dependency
+installation.
 
 ```bash
-cd reproducibility
-./reproduce.sh
+git clone https://github.com/Barca0412/QuantumOpt-Explorer.git
+cd QuantumOpt-Explorer
+./reproduce.sh --smoke
 ```
 
-The script installs the locked environment, runs the four unit tests, executes all paired policy episodes, regenerates raw traces, tables, figures and reports, and then checks the declared output invariants. The exact simulator version is Perceval 1.2.4.
+Run the frozen semifinal experiment and compare it with the release fixture:
 
-To stay within the competition portal's 1000 KB attachment limit, the largest generated raw tables and PNG figures are not duplicated in the ZIP. The two most useful audit files are retained losslessly in `evidence/`; every omitted generated artifact is recreated by the command above from the frozen seeds and configuration.
+```bash
+./reproduce.sh --full
+```
 
-## Evidence boundary
+Equivalent explicit commands:
 
-This package contains a deterministic simulator study of a restricted four-mode linear-optical circuit grammar. The model inserts disclosed mode-loss matrices after ideal Perceval layers. It does not include laboratory hardware, multiphoton interference, detector response, fabrication drift or undisclosed calibration data. Those omissions define the next experiment rather than being folded into the present result.
+```bash
+uv sync --frozen --extra dev
+uv run --frozen pytest
+uv run --frozen python -m quantumopt_v2 run \
+  --config configs/v2_pilot.json --output runs/v2
+uv run --frozen python -m quantumopt_v2 verify \
+  --run runs/v2 --golden evidence/golden_summary.json
+```
+
+## Exploration contract
+
+The public environment follows a one-way state machine:
+
+```text
+reset -> query -> freeze -> evaluate_heldout
+```
+
+During search, a policy can observe candidate parameters and training-noise metrics.
+Held-out metrics are unavailable until the selected candidate is frozen. Random,
+nearest-greedy, and Budget-Aware Diversity Search receive the same candidates,
+warm-up observations, query budget, and noise schedules for each paired device seed.
+
+The primary metric is `usable_success`, the unconditional probability that the
+logical output is correct and the herald condition is accepted. Conditional truth-
+table fidelity, herald success, false-herald probability, leakage, and post-search
+tomography diagnostics are reported separately so that one metric cannot hide a
+physical trade-off.
+
+## Evidence map
+
+| Artifact | Purpose |
+| --- | --- |
+| `V2_PROTOCOL.md` | Frozen question, environment, split, metrics, policies, and outcome gates |
+| `runs/v2/query_log.jsonl` | Complete action-observation trajectory; no held-out fields |
+| `runs/v2/noise_schedule.csv` | Exact train and held-out perturbations |
+| `runs/v2/summary.csv` | Paired policy and catalog-reference outcomes |
+| `runs/v2/comparisons.csv` | Effect sizes and seed-level comparisons |
+| `runs/v2/discovery_gate.json` | Predeclared A/B/C interpretation |
+| `SEMIFINAL_REPORT.md` and `output/pdf/` | Judge-facing research report |
+| `docs/EVIDENCE_MATRIX.md` | Direct mapping to the 45/35/15/5 rubric |
+| `evidence/golden_summary.json` | Independent release fixture used by `verify` |
+| `archive/v1/` | Frozen preliminary package and expanded raw evidence |
+
+## Reproducibility and licences
+
+All candidate pools, device perturbations, and noise schedules are synthetic and
+seeded. No proprietary dataset, commercial API, closed-source model, QPU, or
+undisclosed calibration file is used. Source is MIT licensed; generated data is CC0;
+reports and figures are CC BY 4.0. See `DATA_LICENSE.md` and
+`THIRD_PARTY_NOTICES.md` for the complete disclosure.
+
+Perceval 1.2.4 supplies the catalog topology and photonic simulation primitives.
+The project-specific contribution is the frozen exploration protocol, query-budget
+interface, OOD device-error split, equal-budget policy comparison, audit trail, and
+release verification layer.
+
+## Version boundary
+
+`round1-v1.0.0` is the immutable preliminary submission. V1 used a restricted
+four-mode single-photon transfer-matrix benchmark and retained a negative BADS
+result. V2 changes the scientific object to a multiphoton heralded-CNOT calibration
+pilot; it does not rewrite the V1 experiment or present post-hoc V1 diagnostics as
+preregistered evidence.

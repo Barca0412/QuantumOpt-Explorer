@@ -1,0 +1,314 @@
+{
+  "analysis_name": "V1 post-hoc metric-sensitivity and phenotype audit",
+  "analysis_status": "post-hoc diagnostic; not preregistered",
+  "bads_result": {
+    "discovery_gate_passed": false,
+    "evidence_status": "verified frozen V1 result",
+    "heldout_fidelity_comparisons": {
+      "greedy": {
+        "bads_wins": 0,
+        "mean_paired_difference": -0.07015653292011001,
+        "n_paired_episodes": 12,
+        "paired_ci95_high": -0.01589513879229087,
+        "paired_ci95_low": -0.1365619866263438,
+        "ties": 6
+      },
+      "random": {
+        "bads_wins": 6,
+        "mean_paired_difference": -0.06020639558216261,
+        "n_paired_episodes": 12,
+        "paired_ci95_high": 0.03831603043817307,
+        "paired_ci95_low": -0.16585415286108515,
+        "ties": 1
+      }
+    }
+  },
+  "future_work": [
+    "Treat survival or a physically justified joint metric as co-primary.",
+    "Add component-specific asymmetric loss, source and detector effects, partial distinguishability, and fabrication perturbations.",
+    "Canonicalize executable phenotypes before enforcing candidate uniqueness and query-budget uniqueness.",
+    "Test multiple target and topology families with stronger search baselines and preregistered ablations."
+  ],
+  "interpretation": {
+    "not_established": "This diagnostic does not establish why BADS underperformed, physical-device robustness, or a new quantum-optical discovery.",
+    "post_hoc": "The held-out shift is expressed overwhelmingly through single-photon survival, while normalized process fidelity changes little. This is consistent with the metric's exact invariance to scalar attenuation.",
+    "verified": "The V1 discovery gate did not pass, and its frozen artifacts contain four genotype rows that duplicate another executable phenotype."
+  },
+  "pattern_level_correlations": [
+    {
+      "aggregate_pearson_loss_vs_metric": 0.08573777699581449,
+      "evidence_status": "post-hoc diagnostic; correlation is not causal",
+      "mean_loss_rate": 0.012055891308699745,
+      "mean_metric_value": 0.8412823398831111,
+      "metric": "normalized_process_fidelity",
+      "n_pattern_rows": 576,
+      "n_selected_candidate_groups": 36,
+      "split": "train",
+      "within_candidate_pearson_max": 0.412850865171085,
+      "within_candidate_pearson_mean": 0.08212104964019168,
+      "within_candidate_pearson_median": 0.07099110136316206,
+      "within_candidate_pearson_min": -0.5021726740435748
+    },
+    {
+      "aggregate_pearson_loss_vs_metric": -0.6895772466738128,
+      "evidence_status": "post-hoc diagnostic; correlation is not causal",
+      "mean_loss_rate": 0.012055891308699745,
+      "mean_metric_value": 0.9436411344098065,
+      "metric": "single_photon_survival",
+      "n_pattern_rows": 576,
+      "n_selected_candidate_groups": 36,
+      "split": "train",
+      "within_candidate_pearson_max": -0.9999921139703519,
+      "within_candidate_pearson_mean": -0.9999950768767543,
+      "within_candidate_pearson_median": -0.9999951398593638,
+      "within_candidate_pearson_min": -0.9999980311367678
+    },
+    {
+      "aggregate_pearson_loss_vs_metric": 0.04746368746334556,
+      "evidence_status": "post-hoc diagnostic; correlation is not causal",
+      "mean_loss_rate": 0.035865217056075455,
+      "mean_metric_value": 0.840873695771115,
+      "metric": "normalized_process_fidelity",
+      "n_pattern_rows": 864,
+      "n_selected_candidate_groups": 36,
+      "split": "heldout",
+      "within_candidate_pearson_max": 0.4671647136090859,
+      "within_candidate_pearson_mean": -0.028348896239754364,
+      "within_candidate_pearson_median": -0.0446282646051962,
+      "within_candidate_pearson_min": -0.31960001425309215
+    },
+    {
+      "aggregate_pearson_loss_vs_metric": -0.6337363819338612,
+      "evidence_status": "post-hoc diagnostic; correlation is not causal",
+      "mean_loss_rate": 0.035865217056075455,
+      "mean_metric_value": 0.8401284803230816,
+      "metric": "single_photon_survival",
+      "n_pattern_rows": 864,
+      "n_selected_candidate_groups": 36,
+      "split": "heldout",
+      "within_candidate_pearson_max": -0.9998187458882942,
+      "within_candidate_pearson_mean": -0.9999162307926408,
+      "within_candidate_pearson_median": -0.9999227177302217,
+      "within_candidate_pearson_min": -0.9999783727989057
+    }
+  ],
+  "phenotype_duplicate_audit": {
+    "candidate_genotype_rows": 2304,
+    "duplicate_genotype_rows_beyond_first": 4,
+    "duplicate_phenotype_groups": 4,
+    "evidence_status": "verified frozen V1 artifact audit",
+    "groups": [
+      {
+        "bads_query_occurrences": 0,
+        "candidate_ids": "e6ccc450c0575c13;32d3a88aaa071c8b",
+        "cause": "candidate ID retains inactive layers and the second theta gene that pattern-1 layers do not execute",
+        "episode_seed": 53,
+        "evidence_status": "verified from frozen V1 candidate and query logs",
+        "genotype_multiplicity": 2,
+        "greedy_query_occurrences": 2,
+        "phenotype_id": "597745d7afce22ce",
+        "pool_indices": "78;124",
+        "random_query_occurrences": 0
+      },
+      {
+        "bads_query_occurrences": 0,
+        "candidate_ids": "be299ef6e417c025;8f42d2294e3bc864",
+        "cause": "candidate ID retains inactive layers and the second theta gene that pattern-1 layers do not execute",
+        "episode_seed": 97,
+        "evidence_status": "verified from frozen V1 candidate and query logs",
+        "genotype_multiplicity": 2,
+        "greedy_query_occurrences": 2,
+        "phenotype_id": "597745d7afce22ce",
+        "pool_indices": "34;155",
+        "random_query_occurrences": 1
+      },
+      {
+        "bads_query_occurrences": 0,
+        "candidate_ids": "039cebe3e6fce08b;ece83539ec613618",
+        "cause": "candidate ID retains inactive layers and the second theta gene that pattern-1 layers do not execute",
+        "episode_seed": 109,
+        "evidence_status": "verified from frozen V1 candidate and query logs",
+        "genotype_multiplicity": 2,
+        "greedy_query_occurrences": 2,
+        "phenotype_id": "61465534faa780a5",
+        "pool_indices": "46;126",
+        "random_query_occurrences": 0
+      },
+      {
+        "bads_query_occurrences": 0,
+        "candidate_ids": "ece83539ec613618;d0605ff660d9a38d",
+        "cause": "candidate ID retains inactive layers and the second theta gene that pattern-1 layers do not execute",
+        "episode_seed": 149,
+        "evidence_status": "verified from frozen V1 candidate and query logs",
+        "genotype_multiplicity": 2,
+        "greedy_query_occurrences": 2,
+        "phenotype_id": "61465534faa780a5",
+        "pool_indices": "33;142",
+        "random_query_occurrences": 1
+      }
+    ],
+    "redundant_physical_queries_by_policy": {
+      "bads": 0,
+      "greedy": 4,
+      "random": 0
+    }
+  },
+  "policy_shift": [
+    {
+      "absolute_gap_ratio_survival_to_fidelity": 173.73005494931263,
+      "evidence_status": "post-hoc diagnostic from frozen V1 outputs",
+      "fidelity_gap_ci95_high": 0.0010826622908190835,
+      "fidelity_gap_ci95_low": 0.00023630357116544016,
+      "fidelity_generalization_gap_mean": 0.000642854547176284,
+      "fidelity_generalization_gap_median": 0.0006616771113510667,
+      "heldout_fidelity_q25_mean": 0.8573518642514654,
+      "heldout_survival_q25_mean": 0.8278240543221936,
+      "n_episodes": 12,
+      "policy": "random",
+      "policy_label": "Random",
+      "share_of_two_absolute_gaps_carried_by_survival": 0.9942768861356445,
+      "survival_gap_ci95_high": 0.1160612280110303,
+      "survival_gap_ci95_low": 0.10540047655539175,
+      "survival_generalization_gap_mean": 0.1116831558053513,
+      "survival_generalization_gap_median": 0.11205439167325337,
+      "train_fidelity_q25_mean": 0.8579947187986415,
+      "train_survival_q25_mean": 0.9395072101275449
+    },
+    {
+      "absolute_gap_ratio_survival_to_fidelity": 286.9680009564878,
+      "evidence_status": "post-hoc diagnostic from frozen V1 outputs",
+      "fidelity_gap_ci95_high": 0.0005171206668621197,
+      "fidelity_gap_ci95_low": 0.00024109779467816617,
+      "fidelity_generalization_gap_mean": 0.00037078342574836665,
+      "fidelity_generalization_gap_median": 0.0002874988911222842,
+      "heldout_fidelity_q25_mean": 0.8673020015894126,
+      "heldout_survival_q25_mean": 0.836022392269124,
+      "n_episodes": 12,
+      "policy": "greedy",
+      "policy_label": "Greedy",
+      "share_of_two_absolute_gaps_carried_by_survival": 0.9965273919439712,
+      "survival_gap_ci95_high": 0.11458918119875071,
+      "survival_gap_ci95_low": 0.0964442995700557,
+      "survival_generalization_gap_mean": 0.1064029784748071,
+      "survival_generalization_gap_median": 0.11181386219159745,
+      "train_fidelity_q25_mean": 0.8676727850151611,
+      "train_survival_q25_mean": 0.9424253707439311
+    },
+    {
+      "absolute_gap_ratio_survival_to_fidelity": 134.46263617456182,
+      "evidence_status": "post-hoc diagnostic from frozen V1 outputs",
+      "fidelity_gap_ci95_high": 0.0013826405025852053,
+      "fidelity_gap_ci95_low": 0.0004220842664001012,
+      "fidelity_generalization_gap_mean": 0.0008402834599011746,
+      "fidelity_generalization_gap_median": 0.0005836827161591618,
+      "heldout_fidelity_q25_mean": 0.7971454686693026,
+      "heldout_survival_q25_mean": 0.8254637606338182,
+      "n_episodes": 12,
+      "policy": "bads",
+      "policy_label": "BADS",
+      "share_of_two_absolute_gaps_carried_by_survival": 0.9926178905989149,
+      "survival_gap_ci95_high": 0.11673643793944628,
+      "survival_gap_ci95_low": 0.10758569920934404,
+      "survival_generalization_gap_mean": 0.11298672915219365,
+      "survival_generalization_gap_median": 0.11430352686795076,
+      "train_fidelity_q25_mean": 0.7979857521292039,
+      "train_survival_q25_mean": 0.9384504897860119
+    }
+  ],
+  "schema_version": "1.0",
+  "source_artifacts": [
+    {
+      "path": "archive/v1/reproducibility/config/experiment.json",
+      "sha256": "c3e2e4d4e23890a796820804dd9fd7779f4d5e6e49eab07ad81ecf822a601e50"
+    },
+    {
+      "path": "archive/v1/reproducibility/src/quantumopt_experiment.py",
+      "sha256": "dccd7b022b16e8efa2e21d36fe2d55e13c3325f7589e7291a168f494c3233a60"
+    },
+    {
+      "path": "archive/v1/reproducibility/raw/candidate_pool.jsonl",
+      "sha256": "453a47a0ed9aeeb51eb26a7bc37b5ac829099d7051d92e1c02ea37fee8c466f5"
+    },
+    {
+      "path": "archive/v1/reproducibility/raw/query_log.jsonl",
+      "sha256": "59d9cd615044d1b8cb36a7e5b6fd40499f2ed122feddf0dd4ac5f8ab25eee8aa"
+    },
+    {
+      "path": "archive/v1/reproducibility/raw/final_pattern_metrics.csv",
+      "sha256": "e612414c040d99fc8578d9929753195de5d1b45275b3736c87cc6ad01d46e2bf"
+    },
+    {
+      "path": "archive/v1/reproducibility/results/episode_summary.csv",
+      "sha256": "b3ba7e6d373cfdd0c673b4e3ced71f89985cbd5ef92f3b175b3926aeb1bf4c82"
+    },
+    {
+      "path": "archive/v1/reproducibility/results/aggregate_metrics.csv",
+      "sha256": "c67c015d46eae488d2e7db5ce1d457963cf2f7fdd437b20956801bf9d75425a5"
+    },
+    {
+      "path": "archive/v1/reproducibility/results/statistical_comparisons.csv",
+      "sha256": "b92f9de49284de91386a3fe6ce29bf47323779748cc96e3f5ef255bf2f6afc7e"
+    },
+    {
+      "path": "archive/v1/reproducibility/results/discovery_gate.json",
+      "sha256": "5db1429ba0b6e3e3178e23de200dacb6fb316b3451ad9835222ab101a1528677"
+    }
+  ],
+  "source_release": "archive/v1",
+  "uniform_loss_sweep": [
+    {
+      "depth": 5,
+      "evidence_status": "verified analytic sanity check of the V1 formula",
+      "mean_single_photon_survival": 1.0,
+      "modes": 4,
+      "net_amplitude_scale": 1.0,
+      "normalized_process_fidelity": 1.0,
+      "uniform_intensity_loss_per_layer": 0.0
+    },
+    {
+      "depth": 5,
+      "evidence_status": "verified analytic sanity check of the V1 formula",
+      "mean_single_photon_survival": 0.9509900499000001,
+      "modes": 4,
+      "net_amplitude_scale": 0.9751871871081983,
+      "normalized_process_fidelity": 1.0,
+      "uniform_intensity_loss_per_layer": 0.01
+    },
+    {
+      "depth": 5,
+      "evidence_status": "verified analytic sanity check of the V1 formula",
+      "mean_single_photon_survival": 0.8587340257000001,
+      "modes": 4,
+      "net_amplitude_scale": 0.9266790305709955,
+      "normalized_process_fidelity": 1.0,
+      "uniform_intensity_loss_per_layer": 0.03
+    },
+    {
+      "depth": 5,
+      "evidence_status": "verified analytic sanity check of the V1 formula",
+      "mean_single_photon_survival": 0.7737809374999995,
+      "modes": 4,
+      "net_amplitude_scale": 0.8796481896190087,
+      "normalized_process_fidelity": 1.0,
+      "uniform_intensity_loss_per_layer": 0.05
+    },
+    {
+      "depth": 5,
+      "evidence_status": "verified analytic sanity check of the V1 formula",
+      "mean_single_photon_survival": 0.5904899999999997,
+      "modes": 4,
+      "net_amplitude_scale": 0.768433471420916,
+      "normalized_process_fidelity": 1.0,
+      "uniform_intensity_loss_per_layer": 0.1
+    },
+    {
+      "depth": 5,
+      "evidence_status": "verified analytic sanity check of the V1 formula",
+      "mean_single_photon_survival": 0.3276799999999999,
+      "modes": 4,
+      "net_amplitude_scale": 0.5724334022399461,
+      "normalized_process_fidelity": 1.0,
+      "uniform_intensity_loss_per_layer": 0.2
+    }
+  ]
+}

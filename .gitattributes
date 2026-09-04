@@ -1,0 +1,3 @@
+# Preserve the byte-level V1 archive exactly as submitted. Some frozen CSV
+# evidence uses CRLF and should not be normalized or rewritten by Git.
+archive/v1/** -text -diff

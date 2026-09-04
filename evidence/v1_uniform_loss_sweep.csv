@@ -1,0 +1,7 @@
+modes,depth,uniform_intensity_loss_per_layer,net_amplitude_scale,normalized_process_fidelity,mean_single_photon_survival,evidence_status
+4,5,0.0,1.0,1.0,1.0,verified analytic sanity check of the V1 formula
+4,5,0.01,0.9751871871081983,1.0,0.9509900499000001,verified analytic sanity check of the V1 formula
+4,5,0.03,0.9266790305709955,1.0,0.8587340257000001,verified analytic sanity check of the V1 formula
+4,5,0.05,0.8796481896190087,1.0,0.7737809374999995,verified analytic sanity check of the V1 formula
+4,5,0.1,0.768433471420916,1.0,0.5904899999999997,verified analytic sanity check of the V1 formula
+4,5,0.2,0.5724334022399461,1.0,0.3276799999999999,verified analytic sanity check of the V1 formula

@@ -1,0 +1,81 @@
+{
+  "absolute_tolerance": 1e-12,
+  "aggregate_means": {
+    "bads": {
+      "fidelity_generalization_gap": 0.0008402834599011746,
+      "heldout_fidelity_q25": 0.7971454686693026,
+      "heldout_success_q25": 0.8254637606338182,
+      "search_auc": 0.7061800719481569,
+      "success_generalization_gap": 0.11298672915219365
+    },
+    "greedy": {
+      "fidelity_generalization_gap": 0.00037078342574836665,
+      "heldout_fidelity_q25": 0.8673020015894126,
+      "heldout_success_q25": 0.836022392269124,
+      "search_auc": 0.8025864579010227,
+      "success_generalization_gap": 0.10640297847480708
+    },
+    "random": {
+      "fidelity_generalization_gap": 0.000642854547176284,
+      "heldout_fidelity_q25": 0.8573518642514651,
+      "heldout_success_q25": 0.8278240543221935,
+      "search_auc": 0.758005185693338,
+      "success_generalization_gap": 0.1116831558053513
+    }
+  },
+  "configuration": {
+    "candidate_pool_size": 192,
+    "episode_seeds": [17, 29, 41, 53, 67, 79, 97, 109, 127, 149, 167, 181],
+    "heldout_loss_patterns": 24,
+    "max_components": 30,
+    "max_depth": 5,
+    "modes": 4,
+    "policies": ["random", "greedy", "bads"],
+    "query_budget": 48,
+    "train_loss_patterns": 16,
+    "warmup_queries": 6
+  },
+  "discovery_gate_passed": false,
+  "fixture_status": "frozen semantic expectations; not generated at verification time",
+  "paired_fidelity_comparisons": {
+    "bads_minus_greedy": {
+      "bads_wins": 0,
+      "baseline": "greedy",
+      "mean_paired_difference": -0.07015653292011001,
+      "paired_ci95_high": -0.01589513879229087,
+      "paired_ci95_low": -0.1365619866263438,
+      "ties": 6
+    },
+    "bads_minus_random": {
+      "bads_wins": 6,
+      "baseline": "random",
+      "mean_paired_difference": -0.06020639558216261,
+      "paired_ci95_high": 0.03831603043817307,
+      "paired_ci95_low": -0.16585415286108515,
+      "ties": 1
+    }
+  },
+  "phenotype_audit": {
+    "duplicate_groups": 4,
+    "duplicate_rows_beyond_first": 4,
+    "redundant_physical_queries_by_policy": {
+      "bads": 0,
+      "greedy": 4,
+      "random": 0
+    }
+  },
+  "schema_version": "1.0",
+  "semantic_counts": {
+    "aggregate_rows": 39,
+    "candidate_rows": 2304,
+    "episode_rows": 36,
+    "final_pattern_rows": 12600,
+    "learning_curve_rows": 1728,
+    "loss_schedule_rows": 9600,
+    "pareto_rows": 315,
+    "query_pattern_rows": 27648,
+    "query_rows": 1728,
+    "statistical_comparison_rows": 10
+  },
+  "source_release": "archive/v1"
+}

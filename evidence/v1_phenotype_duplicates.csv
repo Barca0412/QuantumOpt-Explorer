@@ -1,0 +1,5 @@
+episode_seed,phenotype_id,genotype_multiplicity,candidate_ids,pool_indices,random_query_occurrences,greedy_query_occurrences,bads_query_occurrences,cause,evidence_status
+53,597745d7afce22ce,2,e6ccc450c0575c13;32d3a88aaa071c8b,78;124,0,2,0,candidate ID retains inactive layers and the second theta gene that pattern-1 layers do not execute,verified from frozen V1 candidate and query logs
+97,597745d7afce22ce,2,be299ef6e417c025;8f42d2294e3bc864,34;155,1,2,0,candidate ID retains inactive layers and the second theta gene that pattern-1 layers do not execute,verified from frozen V1 candidate and query logs
+109,61465534faa780a5,2,039cebe3e6fce08b;ece83539ec613618,46;126,0,2,0,candidate ID retains inactive layers and the second theta gene that pattern-1 layers do not execute,verified from frozen V1 candidate and query logs
+149,61465534faa780a5,2,ece83539ec613618;d0605ff660d9a38d,33;142,1,2,0,candidate ID retains inactive layers and the second theta gene that pattern-1 layers do not execute,verified from frozen V1 candidate and query logs

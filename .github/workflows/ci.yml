@@ -1,0 +1,26 @@
+name: reproducibility
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.11.7"
+          enable-cache: true
+      - name: Install frozen environment
+        run: uv sync --frozen --extra dev
+      - name: Run unit tests
+        run: uv run --frozen pytest
+      - name: Run smoke exploration
+        run: uv run --frozen python -m quantumopt_v2 run --config configs/v2_smoke.json --output runs/ci-smoke
