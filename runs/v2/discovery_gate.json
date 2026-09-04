@@ -1,0 +1,80 @@
+{
+  "claim_boundary": "Fixed-topology robust calibration pilot only. Simulated Perceval tomography checks coherence for the modeled process but does not establish a novel gate or hardware performance.",
+  "coherence_check_pass": false,
+  "coherent_process_tomography": {
+    "completed_finalists": 32,
+    "enabled": true,
+    "expected_finalists": 32,
+    "minimum_mean_average_gate_fidelity": 0.9,
+    "reference_checks": {
+      "catalog": {
+        "noninferiority_margin": 0.01,
+        "pass": true,
+        "reference_mean_process_fidelity": 0.8045634281197109,
+        "target_minus_reference": -0.003899378008525245
+      },
+      "random": {
+        "noninferiority_margin": 0.01,
+        "pass": true,
+        "reference_mean_process_fidelity": 0.795923161261904,
+        "target_minus_reference": 0.004740888849281699
+      }
+    },
+    "role": "diagnostic_not_outcome_gate",
+    "target_completed": 8,
+    "target_mean_average_gate_fidelity": 0.8006640501111857
+  },
+  "discovery_claim_pass": false,
+  "gate_version": "v2-pilot-1",
+  "outcome_class": "C",
+  "outcome_definition": {
+    "A": "all three preregistered quantitative improvement checks pass",
+    "B": "stable same-direction train/heldout ranking reversal (mechanism crossover)",
+    "C": "neither A nor B; reproducible null/negative pilot"
+  },
+  "paired_checks": {
+    "catalog": {
+      "available": true,
+      "conditional_fidelity_difference": 0.0038201967895859362,
+      "fidelity_noninferiority_margin": 0.01,
+      "fidelity_pass": true,
+      "mean_relative_improvement": 0.12906943516342706,
+      "relative_pass": true,
+      "relative_required": 0.1,
+      "wins": 8,
+      "wins_pass": true,
+      "wins_required": 6
+    },
+    "random": {
+      "available": true,
+      "conditional_fidelity_difference": 0.004260101703236999,
+      "fidelity_noninferiority_margin": 0.01,
+      "fidelity_pass": true,
+      "mean_relative_improvement": 0.009564492243906125,
+      "relative_pass": false,
+      "relative_required": 0.1,
+      "wins": 4,
+      "wins_pass": false,
+      "wins_required": 6
+    }
+  },
+  "predeclared_A_gate_pass": false,
+  "primary_metric": "heldout_usable_success_q25",
+  "quantitative_signal_pass": false,
+  "ranking_reversal_checks": {
+    "catalog": {
+      "required_same_direction_reversals": 6,
+      "stable_reversal": false,
+      "train_negative_heldout_positive": 0,
+      "train_positive_heldout_negative": 0
+    },
+    "random": {
+      "required_same_direction_reversals": 6,
+      "stable_reversal": false,
+      "train_negative_heldout_positive": 0,
+      "train_positive_heldout_negative": 0
+    }
+  },
+  "stable_train_heldout_ranking_reversal": false,
+  "target_policy": "bads"
+}

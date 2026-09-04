@@ -9,6 +9,8 @@
 | The ideal catalog CNOT maps all four computational inputs correctly. | Verified in simulation | Ideal-sanity test and run metadata |
 | The ideal catalog heralding performance is 2/27. | Verified in Perceval 1.2.4 | Ideal-sanity test and Perceval catalog reference |
 | The reported V2 policy comparison follows the frozen protocol. | Verified in saved run | Protocol/config hashes, noise schedule, raw log, summary, golden verifier |
+| BADS cleared the preregistered advantage gate. | False; Outcome C | 8/8 wins and +12.91% versus catalog, but only 4 wins, 4 ties, and +0.96% versus random |
+| Process tomography completed for all frozen finalists. | Verified in simulation | 32/32 rows in `process_tomography.csv`; diagnostic only, not an outcome gate |
 | The simulated device-error distribution represents a particular laboratory. | Not claimed | Synthetic stress-test prior only |
 | V2 discovers a new gate, circuit topology, or physical law. | Not claimed | Topology is fixed to the public Perceval catalog CNOT |
 | Results transfer to hardware. | Not established | No device data or hardware experiment was used |
@@ -37,6 +39,8 @@ tomography diagnostic is run only after policies freeze their final candidates.
   search policies with comparable information access.
 - No threshold, seed, primary metric, or held-out distribution may be changed after
   the full-run outputs are inspected.
+- BADS finding the finite-pool held-out oracle candidate in 8/8 seeds is post-search
+  context, not permission to bypass the frozen comparison against random.
 
 ## V1 boundary
 

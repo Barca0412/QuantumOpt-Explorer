@@ -1,0 +1,66 @@
+{
+  "artifact_sha256": {
+    "candidate_pool.csv": "4acaeec20568d3ce2c0d1eaed328f16b4fba926c3a9dac676d2a12e958762e81",
+    "comparisons.csv": "fa09c642edcf0bcd6cf9dd4dc2538665d942ddba94292efdbc160761145e8435",
+    "discovery_gate.json": "2001431cb9f07f6bbf3e8389eba42a60cb21a258d0c4576c5c5ed1197517813c",
+    "freeze_log.jsonl": "6e372a71bacb55fe5e7a50f624fd79b0c29912cfd8deb84422440886885dfa40",
+    "golden_summary.json": "17c3de7167513783ea3f4aa992c8d7f29c934d538000dcf0e7eb5dc72e655f7c",
+    "heldout_results.jsonl": "a49293512df2c4623435d508caec795a17b53ee98ba6c3a57f10f2ade0a8a672",
+    "heldout_tradeoff.png": "6358d00d431ba6b4fcf5ddfcb1be18bffdf9bf8d8620bf630139624034bb086d",
+    "learning_curves.csv": "127514aa5e7fb52fee5649a250ea5619ceb8413555f4fa41055a7fe89b4002bb",
+    "learning_curves.png": "df0da3c04d3d75d525a1a47cc8494a6e63ddef025755aefc11255ec7efd62b66",
+    "noise_schedule.csv": "4169d48557c0dc41c0f8ee76407a11189ae24e852a64d52639334c47682062d8",
+    "operational_log.jsonl": "f5e59da8ba5854dcd1b5feba4b5b45ce08b58f8905c07aac2fab1f75d5feeb6d",
+    "postsearch_oracle.csv": "dfa93be7f11a9b0c39eb6f934aca7cdd511eba16f399e09765f1e44b9bbaad4a",
+    "process_tomography.csv": "66ee8ee8775a1ae35426058d8cad94222354da52d0e10e3a836f280e57f15322",
+    "process_tomography.jsonl": "92fa5af00adc00dcc0df412745f0c9b1ccf3c37122923ea45a4faac5b6d7f03e",
+    "query_log.jsonl": "ede2de78102fd1311e804742555e659ab200567e58a69e6ddf7e9fa1eba38946",
+    "statistical_comparisons.csv": "fa09c642edcf0bcd6cf9dd4dc2538665d942ddba94292efdbc160761145e8435",
+    "summary.csv": "6fb5419ca323c2a92284bacce8c3ee3e994860ceb3da8366d1f5875f531fb6da"
+  },
+  "budget_and_scale": {
+    "candidate_pool_size_per_seed": 128,
+    "device_seeds": 8,
+    "heldout_noise_draws_per_finalist": 16,
+    "logical_inputs_per_draw": 4,
+    "postsearch_exhaustive_candidates_per_seed": 128,
+    "process_tomography_finalists": 32,
+    "search_query_budget_per_policy": 32,
+    "shared_warmup_queries": 4,
+    "train_noise_draws_per_query": 8
+  },
+  "config_hash": "7cdec90c727e7065f69adf12fd28b4c667a66063d2ba540985d5bea941cc60ca",
+  "git_commit": "8f8e17e9e8476f5e60654f9d0359ba2e63fb9132",
+  "git_dirty": false,
+  "git_state_capture_point": "before_output_directory_creation",
+  "matplotlib_version": "3.10.5",
+  "numpy_version": "2.5.2",
+  "operational_log_is_nondeterministic": true,
+  "perceval_version": "1.2.4",
+  "platform": {
+    "machine": "arm64",
+    "release": "24.6.0",
+    "system": "Darwin"
+  },
+  "policies": [
+    "catalog",
+    "random",
+    "greedy",
+    "bads"
+  ],
+  "primary_metric": "heldout_usable_success_q25",
+  "protocol_hash": "e1240e0f9ec37bb6425f3b0d23d575abe11558053c58e00dadc9f3e94dd82ac1",
+  "protocol_version": "2.0",
+  "python_version": "3.13.13",
+  "schema_version": 1,
+  "seeds": [
+    1701,
+    1702,
+    1703,
+    1704,
+    1705,
+    1706,
+    1707,
+    1708
+  ]
+}

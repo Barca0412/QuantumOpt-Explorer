@@ -1,0 +1,13 @@
+{
+  "comparisons_sha256": "fa09c642edcf0bcd6cf9dd4dc2538665d942ddba94292efdbc160761145e8435",
+  "config_hash": "7cdec90c727e7065f69adf12fd28b4c667a66063d2ba540985d5bea941cc60ca",
+  "postsearch_oracle_sha256": "dfa93be7f11a9b0c39eb6f934aca7cdd511eba16f399e09765f1e44b9bbaad4a",
+  "primary_metric": "heldout_usable_success_q25",
+  "process_tomography_sha256": "66ee8ee8775a1ae35426058d8cad94222354da52d0e10e3a836f280e57f15322",
+  "protocol_hash": "e1240e0f9ec37bb6425f3b0d23d575abe11558053c58e00dadc9f3e94dd82ac1",
+  "query_log_semantic_sha256": "f174d0e80134e4fb3cf700f98f3fddb35240de44c329a6941c7c600903fbad30",
+  "query_rows": 776,
+  "schema_version": 1,
+  "summary_rows": 32,
+  "summary_sha256": "6fb5419ca323c2a92284bacce8c3ee3e994860ceb3da8366d1f5875f531fb6da"
+}

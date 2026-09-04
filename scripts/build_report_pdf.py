@@ -81,7 +81,7 @@ def styles() -> dict[str, ParagraphStyle]:
             textColor=INK,
             spaceBefore=15,
             spaceAfter=7,
-            keepWithNext=True,
+            keepWithNext=False,
         ),
         "h2": ParagraphStyle(
             "H2",
@@ -92,7 +92,7 @@ def styles() -> dict[str, ParagraphStyle]:
             textColor=BLUE,
             spaceBefore=11,
             spaceAfter=5,
-            keepWithNext=True,
+            keepWithNext=False,
         ),
         "h3": ParagraphStyle(
             "H3",
@@ -103,7 +103,7 @@ def styles() -> dict[str, ParagraphStyle]:
             textColor=INK,
             spaceBefore=8,
             spaceAfter=4,
-            keepWithNext=True,
+            keepWithNext=False,
         ),
         "body": ParagraphStyle(
             "Body",
@@ -228,17 +228,18 @@ def markdown_story(markdown_path: Path) -> list:
 
     def flush_bullets() -> None:
         if bullets:
-            story.append(
-                ListFlowable(
-                    [ListItem(Paragraph(inline_markup(item), style["bullet"])) for item in bullets],
-                    bulletType="bullet",
-                    start="circle",
-                    leftIndent=15,
-                    bulletFontName="Helvetica",
-                    bulletFontSize=7,
-                    spaceAfter=5,
+            for item in bullets:
+                story.append(
+                    ListFlowable(
+                        [ListItem(Paragraph(inline_markup(item), style["bullet"]))],
+                        bulletType="bullet",
+                        start="circle",
+                        leftIndent=15,
+                        bulletFontName="Helvetica",
+                        bulletFontSize=7,
+                        spaceAfter=2,
+                    )
                 )
-            )
             bullets.clear()
 
     def flush_table() -> None:
@@ -282,6 +283,12 @@ def markdown_story(markdown_path: Path) -> list:
         if not line.strip():
             flush_paragraph()
             flush_bullets()
+            continue
+        if line.strip() == "<!-- PAGEBREAK -->":
+            flush_paragraph()
+            flush_bullets()
+            flush_table()
+            story.append(PageBreak())
             continue
         if line == "---":
             flush_paragraph()
@@ -381,7 +388,7 @@ def main() -> None:
         pagesize=A4,
         rightMargin=19 * mm,
         leftMargin=19 * mm,
-        topMargin=20 * mm,
+        topMargin=24 * mm,
         bottomMargin=18 * mm,
         title="QuantumOpt-Explorer Semifinal Report",
         author="Haoming Chen",

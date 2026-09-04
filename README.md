@@ -24,10 +24,25 @@ new-gate claim, or evidence of a globally novel optical topology. Positive,
 counterexample, crossover, and stable negative outcomes were all defined before the
 full run; the complete result is retained regardless of which outcome occurred.
 
+## Frozen semifinal result
+
+The preregistered result is **Outcome C: a reproducible negative pilot for BADS
+superiority**. BADS beat the untuned catalog setting in 8/8 paired device seeds
+with a mean relative held-out usable-success-q25 improvement of 12.91%. Against
+equal-budget random search, however, it recorded only 4 wins and 4 ties with a
+0.96% mean improvement, below the frozen 6/8-win and 10% thresholds. BADS and
+nearest-greedy selected the same finalist in seven seeds.
+
+All 32 post-freeze process-tomography jobs completed. BADS mean average gate
+fidelity was 0.8007, below the disclosed 0.90 diagnostic threshold; tomography
+did not alter the A/B/C gate. See `SEMIFINAL_REPORT.md` and
+`runs/v2/discovery_gate.json` for the complete interpretation.
+
 ## Two-minute start
 
 Requirements: Python 3.12-3.14, `uv`, and internet access for the first dependency
-installation.
+installation. On the release Apple-silicon host, the full simulator run took
+approximately 5.25 minutes after environment setup; runtime varies by machine.
 
 ```bash
 git clone https://github.com/Barca0412/QuantumOpt-Explorer.git
