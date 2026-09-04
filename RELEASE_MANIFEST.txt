@@ -1,0 +1,19 @@
+QuantumOpt-Explorer semifinal release manifest
+
+release_tag=semifinal-v2.0.0
+repository=https://github.com/Barca0412/QuantumOpt-Explorer
+protocol_tag=v2-protocol-freeze
+protocol_freeze_commit=479530929cbbc97bffe247c2ca0d60b60f4a8e13
+run_source_commit=8f8e17e9e8476f5e60654f9d0359ba2e63fb9132
+evidence_report_commit=03526673e03829ae334d9532f8ad192e09541a0f
+outcome=C
+config_sha256=7cdec90c727e7065f69adf12fd28b4c667a66063d2ba540985d5bea941cc60ca
+protocol_sha256=e1240e0f9ec37bb6425f3b0d23d575abe11558053c58e00dadc9f3e94dd82ac1
+report_pdf_sha256=84d8aba4cb3b6dabe119d49894776dad0af1a5c8184c16d3bd675ef1ffc21acd
+external_golden_sha256=17c3de7167513783ea3f4aa992c8d7f29c934d538000dcf0e7eb5dc72e655f7c
+run_manifest_sha256=bf94e61da9138a912b987ac0c9d13f67eeb7bc0a816b43c98599d4714232012e
+
+The annotated release tag resolves to the commit containing this manifest.
+The ZIP archives and SHA256SUMS.txt are generated from that exact tag and are
+published as GitHub release assets; they are intentionally not committed into
+the source tree.
