@@ -1,0 +1,32 @@
+{
+  "comparisons": [
+    {
+      "comparison": "bads_vs_random",
+      "comparison_pass": false,
+      "fidelity_ci95_high": 0.03831603043817307,
+      "fidelity_ci95_low": -0.16585415286108515,
+      "fidelity_condition_pass": false,
+      "fidelity_mean_difference": -0.06020639558216261,
+      "fidelity_practical_margin_required": 0.01,
+      "success_ci95_low": -0.015209131678333793,
+      "success_condition_pass": false,
+      "success_noninferiority_margin": -0.01
+    },
+    {
+      "comparison": "bads_vs_greedy",
+      "comparison_pass": false,
+      "fidelity_ci95_high": -0.01589513879229087,
+      "fidelity_ci95_low": -0.1365619866263438,
+      "fidelity_condition_pass": false,
+      "fidelity_mean_difference": -0.07015653292011001,
+      "fidelity_practical_margin_required": 0.01,
+      "success_ci95_low": -0.026179291836325547,
+      "success_condition_pass": false,
+      "success_noninferiority_margin": -0.01
+    }
+  ],
+  "discovery_gate_passed": false,
+  "experiment_name": "frozen_pool_loss_shift_v1",
+  "practical_fidelity_margin": 0.01,
+  "success_noninferiority_margin": -0.01
+}

@@ -1,0 +1,13 @@
+[project]
+name = "quantumopt-preliminary-experiment"
+version = "0.1.0"
+description = "Reproducible preliminary experiment for budgeted robust linear-optical circuit search"
+requires-python = ">=3.12,<3.15"
+dependencies = [
+  "matplotlib==3.10.5",
+  "numpy==2.5.2",
+  "perceval-quandela==1.2.4",
+]
+
+[tool.uv]
+package = false

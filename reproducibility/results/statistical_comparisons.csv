@@ -1,0 +1,11 @@
+comparison,baseline,metric,n_paired_episodes,mean_paired_difference,median_paired_difference,paired_ci95_low,paired_ci95_high,bads_wins,ties,fidelity_practical_margin_required,fidelity_mean_difference,fidelity_ci95_low,fidelity_ci95_high,fidelity_condition_pass,success_ci95_low,success_noninferiority_margin,success_condition_pass,comparison_pass
+bads_minus_random,random,heldout_fidelity_q25,12,-0.06020639558216261,0.0293726895302992,-0.16585415286108515,0.03831603043817307,6,1,,,,,,,,,
+bads_minus_random,random,heldout_success_q25,12,-0.0023602936883753423,-2.6109771528448622e-05,-0.015209131678333793,0.008147096984667673,5,1,,,,,,,,,
+bads_minus_random,random,heldout_robust_utility,12,-0.046182410979852574,0.022034219878196926,-0.12531663942560425,0.02712356936789478,6,1,,,,,,,,,
+bads_minus_random,random,search_auc,12,-0.05182511374518106,0.00229422931732165,-0.10631479545604726,-0.002210327437878542,6,1,,,,,,,,,
+bads_minus_greedy,greedy,heldout_fidelity_q25,12,-0.07015653292011001,-0.003342896206999013,-0.1365619866263438,-0.01589513879229087,0,6,,,,,,,,,
+bads_minus_greedy,greedy,heldout_success_q25,12,-0.010558631635305663,0.0,-0.026179291836325547,1.3814434262441704e-06,3,6,,,,,,,,,
+bads_minus_greedy,greedy,heldout_robust_utility,12,-0.05681245935047696,-0.0008404896089322378,-0.10536082513799257,-0.014185125935939338,0,6,,,,,,,,,
+bads_minus_greedy,greedy,search_auc,12,-0.09640638595286588,-0.06304058687235864,-0.1508389529086128,-0.05178025249541685,0,1,,,,,,,,,
+bads_vs_random,,,,,,,,,,0.01,-0.06020639558216261,-0.16585415286108515,0.03831603043817307,False,-0.015209131678333793,-0.01,False,False
+bads_vs_greedy,,,,,,,,,,0.01,-0.07015653292011001,-0.1365619866263438,-0.01589513879229087,False,-0.026179291836325547,-0.01,False,False

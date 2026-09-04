@@ -1,0 +1,41 @@
+{
+  "experiment_name": "frozen_pool_loss_shift_v1",
+  "modes": 4,
+  "max_depth": 5,
+  "max_components": 30,
+  "candidate_pool_size": 192,
+  "query_budget": 48,
+  "warmup_queries": 6,
+  "episode_seeds": [17, 29, 41, 53, 67, 79, 97, 109, 127, 149, 167, 181],
+  "pool_seed_offset": 170170,
+  "loss_seed_offset": 317031,
+  "policy_seed_offset": 811081,
+  "train_loss_patterns": 16,
+  "heldout_loss_patterns": 24,
+  "train_loss": {
+    "mean": 0.012,
+    "mode_sigma": 0.003,
+    "common_sigma": 0.002,
+    "minimum": 0.002,
+    "maximum": 0.030,
+    "mode_bias": [0.0, 0.0, 0.0, 0.0]
+  },
+  "heldout_loss": {
+    "mean": 0.030,
+    "mode_sigma": 0.009,
+    "common_sigma": 0.006,
+    "minimum": 0.008,
+    "maximum": 0.080,
+    "mode_bias": [0.012, 0.000, 0.004, 0.008]
+  },
+  "utility_weights": {
+    "fidelity_q25": 0.75,
+    "success_q25": 0.20,
+    "compactness": 0.05
+  },
+  "bootstrap_resamples": 10000,
+  "practical_fidelity_margin": 0.01,
+  "success_noninferiority_margin": -0.01,
+  "policies": ["random", "greedy", "bads"]
+}
+

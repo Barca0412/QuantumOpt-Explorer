@@ -1,0 +1,14 @@
+QuantumOpt-Explorer frozen environment
+python=3.13.9
+python_implementation=CPython
+platform=macOS-15.6-arm64-arm-64bit-Mach-O
+perceval-quandela=1.2.4
+numpy=2.5.2
+matplotlib=3.10.5
+simulator=Perceval ideal layer unitaries plus disclosed NumPy diagonal loss matrices
+config_sha256=c3e2e4d4e23890a796820804dd9fd7779f4d5e6e49eab07ad81ecf822a601e50
+runner_sha256=dccd7b022b16e8efa2e21d36fe2d55e13c3325f7589e7291a168f494c3233a60
+external_data=none
+commercial_api=none
+closed_source_model=none
+hardware_qpu=none
