@@ -12,6 +12,9 @@
   Diversity Search comparisons under paired candidates, budgets, and noise draws.
 - Added protocol/config hashes, complete JSONL traces, a release golden fixture,
   public CI, licensing disclosure, and a judge-facing report.
+- After the first frozen run exposed a provenance-only issue, changed the manifest
+  to capture Git state before owned output creation; no configuration, score,
+  threshold, seed, candidate, or policy behavior changed.
 - Preserved the preliminary package under `archive/v1/` and retained its negative
   discovery-gate result without revision.
 

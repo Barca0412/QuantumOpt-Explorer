@@ -71,6 +71,10 @@ class RunnerTests(unittest.TestCase):
             manifest = json.loads((output / "run_manifest.json").read_text(encoding="utf-8"))
             self.assertRegex(manifest["git_commit"], r"^[0-9a-f]{40}$")
             self.assertIsInstance(manifest["git_dirty"], bool)
+            self.assertEqual(
+                manifest["git_state_capture_point"],
+                "before_output_directory_creation",
+            )
             with (output / "comparisons.csv").open(newline="", encoding="utf-8") as handle:
                 comparisons = list(csv.DictReader(handle))
             self.assertTrue(
